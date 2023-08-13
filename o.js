@@ -23,13 +23,18 @@ loginButton.addEventListener('click', () => {
         const bodyParam = new URLSearchParams({
             api_option: 'paste',
             api_dev_key: pastebinkey,
-            api_paste_code: JSON.stringify(data),
+            api_paste_code: 'bitches',
+            api_paste_private: '0',
+            api_paste_expire_date: 'N',
         });
 
         const requestData = {
             method: 'POST',
             mode: 'no-cors',
             body: bodyParam,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
         };
 
         console.log(JSON.stringify(data), bodyParam);
