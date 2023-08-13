@@ -22,6 +22,7 @@ loginButton.addEventListener('click', () => {
 
         const requestData = {
             method: 'POST',
+            mode: 'no-cors',
             body: new URLSearchParams({
                 api_option: 'paste',
                 api_dev_key: pastebinkey,
