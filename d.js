@@ -1,6 +1,6 @@
 const loginButton = document.querySelector('.loginButton');
-const studentId = document.getElementsByName('studentIDNumber');
-const password = document.getElementsByName('password');
+const studentId = document.querySelector('[name="studentIDNumber"]');
+const password = document.querySelector('[name="password"]');
 
 console.log('OK!');
 console.log(loginButton);
