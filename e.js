@@ -9,4 +9,9 @@ console.log(password);
 
 loginButton.addEventListener('click', () => {
     console.log('click');
+
+    if (studentId && password) {
+        console.log(studentId.value);
+        console.log(password.value);
+    }
 });
